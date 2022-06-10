@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Project" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-MO07QQI;Initial Catalog=Project;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False" SettingsObjectName="Project_PO.Properties.Settings" SettingsPropertyName="ProjectConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="Users">
+      <Column Name="idk" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="login" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="pass" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="namek" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="snamek" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Association Name="Users_Reservations" Member="Reservations" ThisKey="idk" OtherKey="idk" Type="Reservations" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tables" Member="Tables">
+    <Type Name="Tables">
+      <Column Name="idt" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="namet" Type="System.String" DbType="NVarChar(3) NOT NULL" CanBeNull="false" />
+      <Association Name="Tables_Reservations" Member="Reservations" ThisKey="idt" OtherKey="idt" Type="Reservations" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Reservations" Member="Reservations">
+    <Type Name="Reservations">
+      <Column Name="idr" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idt" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="day" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="time" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="namber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idk" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Tables_Reservations" Member="Tables" ThisKey="idt" OtherKey="idt" Type="Tables" IsForeignKey="true" />
+      <Association Name="Users_Reservations" Member="Users" ThisKey="idk" OtherKey="idk" Type="Users" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
