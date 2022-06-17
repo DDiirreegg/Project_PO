@@ -23,5 +23,33 @@ namespace Project_PO
         {
             InitializeComponent();
         }
+
+        private void Button_logout_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow window1 = new MainWindow();
+            window1.Show();
+            this.Close();
+        }
+
+        private void Button_Reservations_Click(object sender, RoutedEventArgs e)
+        {
+            Reservations1 window2 = new Reservations1();
+            window2.Show();
+            this.Close();
+        }
+
+        private void Button_Menu_Click(object sender, RoutedEventArgs e)
+        {
+            Menu window3 = new Menu();
+            window3.Show();
+            this.Close();
+        }       
+
+        private void Button_Bill_Click(object sender, RoutedEventArgs e)
+        {
+            Bill window4 = new Bill();
+            window4.Show();
+            this.Close();
+        }
     }
 }
