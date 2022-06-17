@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace Project_PO
 {
@@ -24,10 +26,53 @@ namespace Project_PO
         {
             InitializeComponent();
         }
+        SqlConnection Conn = new SqlConnection(@"Data Source=DESKTOP-MO07QQI;Initial Catalog=Project;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 
+       bool loginChecker()
+        {
+            Conn.Open();
+            string myQuery = "select login, pass from Users";
+            SqlDataAdapter da = new SqlDataAdapter(myQuery, Conn);
+            SqlCommandBuilder builder = new SqlCommandBuilder(da);
+            var ds = new DataSet();
+            da.Fill(ds, "Users");
+            DataTable usersTable = ds.Tables["Users"];            
+            foreach (DataRow row in usersTable.Rows)
+            {
+                if ((string)row["login"] == textBoxLogin.Text && (string)row["pass"] == passBox.Password)
+                {
+                    Conn.Close();
+                    return true;
+                }
+            }
+            Conn.Close();
+            return false;
+            
+
+        }
         private void Button_login_Click(object sender, RoutedEventArgs e)
         {
-            string login = textBoxLogin.Text;
+            if (loginChecker())
+            {
+                MainForm window = new MainForm();
+                window.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Doesn't correct or something else problems");
+            }
+
+        }
+
+
+
+
+
+
+
+
+            /*string login = textBoxLogin.Text;
             string pass = passBox.Password;
 
             if(login.Length < 7)
@@ -48,12 +93,12 @@ namespace Project_PO
                 passBox.Background = Brushes.Transparent;
 
                 MessageBox.Show("all is correct");
-            }
+            }*/
 
-        }
+        
 
         private void Button_logout_Click(object sender, RoutedEventArgs e)
-        {
+        {        
             Close();
         }
     }
