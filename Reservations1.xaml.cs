@@ -23,5 +23,12 @@ namespace Project_PO
         {
             InitializeComponent();
         }
+
+        private void BtM_Click(object sender, RoutedEventArgs e)
+        {
+            MainForm window = new MainForm();
+            window.Show();
+            this.Close();
+        }
     }
 }

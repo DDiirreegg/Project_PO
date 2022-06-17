@@ -13,8 +13,7 @@
     <Grid Background="AntiqueWhite">
         <Border MinWidth="400" Margin="15" Background="White" VerticalAlignment="Center" Padding="40" MaxWidth="550" CornerRadius="20">
             <StackPanel>
-                <TextBlock Text="Please login!" FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
-                
+                <TextBlock Text="Please login!" FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>                
                 <TextBox x:Name="textBoxLogin" materialDesign:HintAssist.Hint="Enter your login" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                 <PasswordBox x:Name="passBox" materialDesign:HintAssist.Hint="Enter your password" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
                 <Button Content="Login" Margin="0 20" Click="Button_login_Click"/>

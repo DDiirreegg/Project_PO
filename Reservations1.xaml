@@ -6,10 +6,43 @@
         xmlns:local="clr-namespace:Project_PO"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="Login" Height="600" Width="800" WindowStyle="None"
+        Title="Reservations" Height="600" Width="800" WindowStyle="None"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         >
-    <Grid>
+    <Grid Background="AntiqueWhite">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+       
+            <StackPanel Grid.Row="0" Grid.Column="0">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,0" FontFamily="Yu Gothic UI Semibold" FontSize="22">
+                Reservations
+                </TextBlock>
+                <TextBlock x:Name="nameK" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,70,0,0" FontFamily="Yu Gothic UI Semibold" FontSize="16">QQQQ</TextBlock>
+
+
+
+            </StackPanel>
+
+
+            <StackPanel Grid.Row="1" Grid.Column="0">
+            <Button x:Name="AddReserv" Content="Add reservation" Margin="10,20,10,0" />
+            <Button x:Name="DelReserv" Content="Delete reservation" Margin="10,20,10,0"/>
+            <Button x:Name="EditReserv" Content="Edit reservation" Margin="10,20,10,0"/>
+            <Button x:Name="BtM" Content="Back to menu" VerticalAlignment="Bottom" Margin="10,20,10,0" Click="BtM_Click"/>
+
+
+        </StackPanel>
+        
+
+
+
+
     </Grid>
 </Window>
