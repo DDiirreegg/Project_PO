@@ -24,14 +24,14 @@ namespace Project_PO
     {
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
         SqlConnection Conn = new SqlConnection(@"Data Source=DESKTOP-MO07QQI;Initial Catalog=Project;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 
        bool loginChecker()
         {
             Conn.Open();
-            string myQuery = "select login, pass from Users";
+            string myQuery = "select login, pass, namek, snamek from Users";
             SqlDataAdapter da = new SqlDataAdapter(myQuery, Conn);
             SqlCommandBuilder builder = new SqlCommandBuilder(da);
             var ds = new DataSet();
@@ -52,7 +52,13 @@ namespace Project_PO
         }
         private void Button_login_Click(object sender, RoutedEventArgs e)
         {
-            if (loginChecker())
+            if (textBoxLogin.Text == "admin" && passBox.Password == "admin")
+            {
+                MainFormAdmin window1 = new MainFormAdmin();
+                window1.Show();
+                this.Close();
+            }
+            else if (loginChecker())
             {
                 MainForm window = new MainForm();
                 window.Show();
