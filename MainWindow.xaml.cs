@@ -41,8 +41,8 @@ namespace Project_PO
             {
                 if ((string)row["login"] == textBoxLogin.Text && (string)row["pass"] == passBox.Password)
                 {
-                    DataBank.namek = (string)row["login"];
-                    DataBank.snamek = (string)row["login"];
+                    DataBank.namek = (string)row["namek"];
+                    DataBank.snamek = (string)row["snamek"];
                     Conn.Close();
                     return true;
                 }
@@ -58,7 +58,7 @@ namespace Project_PO
             if (textBoxLogin.Text == "admin" && passBox.Password == "admin")
             {
                 DataBank.namek = "admin";
-                DataBank.snamek = "Pizdecnaxyi";
+                DataBank.snamek = "admin";
                 MainFormAdmin window1 = new MainFormAdmin();
                 window1.Show();
                 this.Close();

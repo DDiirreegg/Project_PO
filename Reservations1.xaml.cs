@@ -26,9 +26,19 @@ namespace Project_PO
 
         private void BtM_Click(object sender, RoutedEventArgs e)
         {
-            MainForm window = new MainForm();
-            window.Show();
-            this.Close();
+            if(DataBank.namek == "admin" && DataBank.snamek == "admin")
+            {
+                MainFormAdmin window1 = MainFormAdmin();
+                window1.Show();
+                this.Close();
+            }
+            else
+            {
+                MainForm window = new MainForm();
+                window.Show();
+                this.Close();
+            }
+            
         }
 
     }
