@@ -51,5 +51,10 @@ namespace Project_PO
             window4.Show();
             this.Close();
         }
+        private void Refresh(object sender, RoutedEventArgs e)
+        {
+            nameK.Content = DataBank.namek;
+            snameK.Content = DataBank.snamek;
+        }
     }
 }

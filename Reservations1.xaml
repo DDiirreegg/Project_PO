@@ -35,20 +35,24 @@
 
 
         <StackPanel Grid.Row="1" Grid.Column="0">
-            <Button x:Name="AddReserv" Content="Add reservation" Margin="10,20,10,0" />
-            <Button x:Name="DelReserv" Content="Delete reservation" Margin="10,20,10,0"/>
-            <Button x:Name="EditReserv" Content="Edit reservation" Margin="10,20,10,0"/>
+            <Button x:Name="AddReserv" Content="Add reservation" Margin="10,20,10,0" Click="AddReserv_Click" />
+            <TextBox x:Name="textBoxIDTable" Margin="10,0,10,0" materialDesign:HintAssist.Hint="Enter table number" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+            <TextBox x:Name="textBoxDay" Margin="10,0,10,0" materialDesign:HintAssist.Hint="Enter reservation date" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+            <TextBox x:Name="textBoxTime" Margin="10,0,10,0" materialDesign:HintAssist.Hint="Enter reservation time" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+            <TextBox x:Name="textBoxNamber" Margin="10,0,10,0" materialDesign:HintAssist.Hint="Enter the number of guests" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+            <TextBox x:Name="textBoxIDK" Margin="10,0,10,0" materialDesign:HintAssist.Hint="Enter the name of the waiter" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+            <Button x:Name="DelReserv" Content="Delete reservation" Margin="10,20,10,0" Click="DelReserv_Click"/>
+            <TextBox x:Name="textBoxIDReserv" Margin="10,0,10,0" materialDesign:HintAssist.Hint="Enter the ID to delete" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+            <Button x:Name="EditReserv" Content="Edit reservation" Margin="10,10,10,0"/>
             <Button x:Name="BtM" Content="Back to menu" Background="Red" VerticalAlignment="Bottom" Margin="10,20,10,0" Click="BtM_Click"/>
-            <TextBox x:Name="textBoxLogReg" materialDesign:HintAssist.Hint="Enter your login" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
-            <TextBox x:Name="textBoxPassReg" materialDesign:HintAssist.Hint="Enter your login" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
-            <TextBox x:Name="textBoxNameReg" materialDesign:HintAssist.Hint="Enter your login" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
-            <TextBox x:Name="textBoxSNameReg" materialDesign:HintAssist.Hint="Enter your login" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
-
-
-        </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="1">
             
+            
+
         </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1"
+            x:Name="usersStackTable"         
+            Background="#C5AFA0"s
+            />
         <StackPanel Grid.Row="1" Grid.Column="1">
             <ListBox> </ListBox>
             

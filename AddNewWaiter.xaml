@@ -11,7 +11,7 @@
         WindowStartupLocation="CenterScreen"
         Loaded="Refresh"
         >
-    <Grid Background="AntiqueWhite">
+    <Grid Background="#E9BCB7">
         <Grid.RowDefinitions>
             <RowDefinition Height="100"></RowDefinition>
             <RowDefinition Height="400"></RowDefinition>
@@ -22,8 +22,10 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Border Grid.Row="0" Grid.Column="0"  Background="AliceBlue" >
-            <StackPanel>
-                                
+            <StackPanel Background="#E9BCB7">
+                <Label x:Name="nameK"/>
+                <Label x:Name="snameK"/>
+
             </StackPanel>
             
         </Border>
@@ -40,10 +42,7 @@
             </StackPanel>
             
         </Border>
-        <StackPanel Grid.Row="1" Grid.Column="1"
-            x:Name="usersStackTable"         
-            Background="AntiqueWhite"
-            />
+        s
         
         
     </Grid>

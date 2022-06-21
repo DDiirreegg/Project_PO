@@ -9,6 +9,7 @@
         Title="Login" Height="600" Width="800" WindowStyle="None"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
+        Loaded="Refresh"
         >
     <Grid Background="AntiqueWhite">
         <Border MinWidth="650" Margin="15,30,15,80" Background="White" VerticalAlignment="Center" Padding="100" MaxWidth="700" CornerRadius="20" Height="490">
@@ -19,5 +20,9 @@
                 <Button Content="Logout" Height="60" Margin="0 5" Background="#FF4040" Click="Button_logout_Click" FontFamily="Yu Gothic UI Semibold" FontSize="18"/>
             </StackPanel>
         </Border>
+        <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Left">
+            <Label x:Name="nameK"/>
+            <Label x:Name="snameK"/>
+        </StackPanel>
     </Grid>
 </Window>
