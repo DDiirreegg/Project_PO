@@ -19,7 +19,7 @@
             <ColumnDefinition Width="1*"></ColumnDefinition>
             <ColumnDefinition Width="3*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-       
+        <Border Grid.Column="0" Grid.Row="0">
             <StackPanel Grid.Row="0" Grid.Column="0">
                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,0" FontFamily="Yu Gothic UI Semibold" FontSize="22">
                 Reservations
@@ -29,16 +29,31 @@
 
 
             </StackPanel>
+        </Border>
 
 
-            <StackPanel Grid.Row="1" Grid.Column="0">
+        <StackPanel Grid.Row="1" Grid.Column="0">
             <Button x:Name="AddReserv" Content="Add reservation" Margin="10,20,10,0" />
             <Button x:Name="DelReserv" Content="Delete reservation" Margin="10,20,10,0"/>
             <Button x:Name="EditReserv" Content="Edit reservation" Margin="10,20,10,0"/>
-            <Button x:Name="BtM" Content="Back to menu" VerticalAlignment="Bottom" Margin="10,20,10,0" Click="BtM_Click"/>
+            <Button x:Name="BtM" Content="Back to menu" Background="Red" VerticalAlignment="Bottom" Margin="10,20,10,0" Click="BtM_Click"/>
+            <TextBox x:Name="textBoxLogReg" materialDesign:HintAssist.Hint="Enter your login" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+            <TextBox x:Name="textBoxPassReg" materialDesign:HintAssist.Hint="Enter your login" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+            <TextBox x:Name="textBoxNameReg" materialDesign:HintAssist.Hint="Enter your login" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+            <TextBox x:Name="textBoxSNameReg" materialDesign:HintAssist.Hint="Enter your login" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
 
 
         </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <ListBox> </ListBox>
+            
+            
+        </StackPanel>
+        
+        
         
 
 

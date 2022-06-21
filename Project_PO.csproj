@@ -100,7 +100,7 @@
     <Compile Include="Reservations1.xaml.cs">
       <DependentUpon>Reservations1.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SqlCommands.cs" />
+    <Compile Include="controllDataBase.cs" />
     <Page Include="AddNewWaiter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

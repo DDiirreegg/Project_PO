@@ -9,6 +9,7 @@
         Title="Login" Height="600" Width="800" WindowStyle="None"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
+        Loaded="Refresh"
         >
     <Grid Background="AntiqueWhite">
         <Grid.RowDefinitions>
@@ -20,6 +21,29 @@
             <ColumnDefinition Width="250"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
+        <Border Grid.Row="0" Grid.Column="0"  Background="AliceBlue" >
+            <StackPanel>
+                                
+            </StackPanel>
+            
+        </Border>
+        <Border Grid.Row="1" Grid.Column="0" Background="Aqua">
+            <StackPanel>
+                <Button x:Name="AddWaiter" Content="Add new waiter" Margin="10,20,10,0" Click="AddWaiter_Click" />                
+                <Button x:Name="DelReserv" Content="Delete waiter" Margin="10,20,10,0" Click="DelReserv_Click"/>
+                <Button x:Name="BtM" Content="Back to menu" Background="Red" VerticalAlignment="Bottom" Margin="10,20,10,0" Click="BtM_Click"/>
+                <TextBox x:Name="textBoxLogReg"  materialDesign:HintAssist.Hint="Enter the login of the waiter" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                <TextBox x:Name="textBoxPassReg"  materialDesign:HintAssist.Hint="Enter the password of the waiter" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                <TextBox x:Name="textBoxNameReg"  materialDesign:HintAssist.Hint="Enter the name of the waiter" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                <TextBox x:Name="textBoxSNameReg"  materialDesign:HintAssist.Hint="Enter waiter's last name" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                <TextBox x:Name="textBoxIDel" materialDesign:HintAssist.Hint="Enter waiter's ID" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+            </StackPanel>
+            
+        </Border>
+        <StackPanel Grid.Row="1" Grid.Column="1"
+            x:Name="usersStackTable"         
+            Background="AntiqueWhite"
+            />
         
         
     </Grid>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project_PO
 {
-    static class DataBank
+    public static class DataBank
     {
         public static string namek;
         public static string snamek;

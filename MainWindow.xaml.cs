@@ -52,8 +52,11 @@ namespace Project_PO
         }
         private void Button_login_Click(object sender, RoutedEventArgs e)
         {
+
             if (textBoxLogin.Text == "admin" && passBox.Password == "admin")
             {
+                DataBank.namek = "admin";
+                DataBank.snamek = "Pizdecnaxyi";
                 MainFormAdmin window1 = new MainFormAdmin();
                 window1.Show();
                 this.Close();
