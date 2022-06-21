@@ -135,7 +135,7 @@ namespace Project_PO
                 BorderBrush = (SolidColorBrush)new BrushConverter().ConvertFrom("#000"),
                 BorderThickness = new Thickness(1),
                 Width = 100,
-                Child = new TextBlock() { Text = "Waiter IDs", Background = (SolidColorBrush)new BrushConverter().ConvertFrom("#ff0000") }
+                Child = new TextBlock() { Text = "Waiter ID", Background = (SolidColorBrush)new BrushConverter().ConvertFrom("#ff0000") }
             };
             var stackHeader = new StackPanel() { Orientation = Orientation.Horizontal, };
             stackHeader.Children.Add(HeaderBlock1);

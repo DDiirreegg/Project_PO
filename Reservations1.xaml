@@ -51,7 +51,7 @@
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="1"
             x:Name="usersStackTable"         
-            Background="#C5AFA0"s
+            Background="#C5AFA0"
             />
         <StackPanel Grid.Row="1" Grid.Column="1">
             <ListBox> </ListBox>

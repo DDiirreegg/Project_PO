@@ -177,7 +177,7 @@ namespace Project_PO
         }
         private void Refresh(object sender, RoutedEventArgs e)
         {
-            s
+            showAllUsers();
             nameK.Content = DataBank.namek;
             snameK.Content = DataBank.snamek;
         }
