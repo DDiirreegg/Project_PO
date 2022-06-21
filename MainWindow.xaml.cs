@@ -41,6 +41,8 @@ namespace Project_PO
             {
                 if ((string)row["login"] == textBoxLogin.Text && (string)row["pass"] == passBox.Password)
                 {
+                    DataBank.namek = (string)row["login"];
+                    DataBank.snamek = (string)row["login"];
                     Conn.Close();
                     return true;
                 }
