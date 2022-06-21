@@ -23,12 +23,12 @@ namespace Project_PO
         {
             InitializeComponent();
         }
-
+        
         private void BtM_Click(object sender, RoutedEventArgs e)
         {
             if(DataBank.namek == "admin" && DataBank.snamek == "admin")
             {
-                MainFormAdmin window1 = MainFormAdmin();
+                MainFormAdmin window1 = new MainFormAdmin();
                 window1.Show();
                 this.Close();
             }
@@ -39,6 +39,11 @@ namespace Project_PO
                 this.Close();
             }
             
+        }
+        public void Refresh(object sender, RoutedEventArgs e)
+        {
+            nameK.Content = DataBank.namek;
+            snameK.Content = DataBank.snamek;
         }
 
     }

@@ -9,6 +9,7 @@
         Title="Reservations" Height="600" Width="800" WindowStyle="None"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
+        Loaded="Refresh"
         >
     <Grid Background="AntiqueWhite">
         <Grid.RowDefinitions>
@@ -24,7 +25,8 @@
                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,0" FontFamily="Yu Gothic UI Semibold" FontSize="22">
                 Reservations
                 </TextBlock>
-                <TextBlock x:Name="nameK" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,70,0,0" FontFamily="Yu Gothic UI Semibold" FontSize="16">QQQQ</TextBlock>
+                <Label x:Name="nameK" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,40,0,0" FontFamily="Yu Gothic UI Semibold" FontSize="16"/>
+                <Label x:Name="snameK" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,0" FontFamily="Yu Gothic UI Semibold" FontSize="16"/>
 
 
 
