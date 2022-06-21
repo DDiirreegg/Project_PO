@@ -1,0 +1,69 @@
+﻿<Window x:Class="Project_PO.Reservations1"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project_PO"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Reservations" Height="600" Width="800" WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Loaded="Refresh"
+        >
+    <Grid Background="AntiqueWhite">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="0" Grid.Row="0">
+            <StackPanel Grid.Row="0" Grid.Column="0">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,0" FontFamily="Yu Gothic UI Semibold" FontSize="22">
+                Reservations
+                </TextBlock>
+                <Label x:Name="nameK" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,40,0,0" FontFamily="Yu Gothic UI Semibold" FontSize="16"/>
+                <Label x:Name="snameK" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,0" FontFamily="Yu Gothic UI Semibold" FontSize="16"/>
+
+
+
+            </StackPanel>
+        </Border>
+
+
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <Button x:Name="AddReserv" Content="Add reservation" Margin="10,20,10,0" Click="AddReserv_Click" />
+            <TextBox x:Name="textBoxIDTable" Margin="10,0,10,0" materialDesign:HintAssist.Hint="Enter table number" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+            <TextBox x:Name="textBoxDay" Margin="10,0,10,0" materialDesign:HintAssist.Hint="Enter reservation date" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+            <TextBox x:Name="textBoxTime" Margin="10,0,10,0" materialDesign:HintAssist.Hint="Enter reservation time" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+            <TextBox x:Name="textBoxNamber" Margin="10,0,10,0" materialDesign:HintAssist.Hint="Enter the number of guests" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+            <TextBox x:Name="textBoxIDK" Margin="10,0,10,0" materialDesign:HintAssist.Hint="Enter the name of the waiter" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+            <Button x:Name="DelReserv" Content="Delete reservation" Margin="10,20,10,0" Click="DelReserv_Click"/>
+            <TextBox x:Name="textBoxIDReserv" Margin="10,0,10,0" materialDesign:HintAssist.Hint="Enter the ID to delete" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+            <Button x:Name="EditReserv" Content="Edit reservation" Margin="10,10,10,0"/>
+            <Button x:Name="BtM" Content="Back to menu" Background="Red" VerticalAlignment="Bottom" Margin="10,20,10,0" Click="BtM_Click"/>
+            
+            
+
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1"
+            x:Name="usersStackTable"         
+            Background="#C5AFA0"
+            />
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <ListBox> </ListBox>
+            
+            
+        </StackPanel>
+        
+        
+        
+
+
+
+
+    </Grid>
+</Window>
