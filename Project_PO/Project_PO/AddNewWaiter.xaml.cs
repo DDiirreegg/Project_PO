@@ -116,56 +116,58 @@ namespace Project_PO
             usersStackTable.Children.Add(stackHeader);
 
 
-            DataTable usersTable = contr.Get("Users", "*");
-            foreach (DataRow row in usersTable.Rows)
-            {
+            //DataTable usersTable = contr.Get("Users", "*");
+            //foreach (DataRow row in usersTable.Rows)
+            //{
 
-                var block1 = new Border()
-                {
-                    BorderBrush = (SolidColorBrush)new BrushConverter().ConvertFrom("#000"),
-                    BorderThickness = new Thickness(1),
-                    Width = 100,
-                    Child = new TextBlock() { Text = Convert.ToString(row[0]) }
-                };
-                var block2 = new Border()
-                {
-                    BorderBrush = (SolidColorBrush)new BrushConverter().ConvertFrom("#000"),
-                    BorderThickness = new Thickness(1),
-                    Width = 100,
-                    Child = new TextBlock() { Text = (string)row[1] }
-                };
-                var block3 = new Border()
-                {
-                    BorderBrush = (SolidColorBrush)new BrushConverter().ConvertFrom("#000"),
-                    BorderThickness = new Thickness(1),
-                    Width = 100,
-                    Child = new TextBlock() { Text = (string)row[2] }
-                };
-                var block4 = new Border()
-                {
-                    BorderBrush = (SolidColorBrush)new BrushConverter().ConvertFrom("#000"),
-                    BorderThickness = new Thickness(1),
-                    Width = 100,
-                    Child = new TextBlock() { Text = (string)row[3] }
+            //    var block1 = new Border()
+            //    {
+            //        BorderBrush = (SolidColorBrush)new BrushConverter().ConvertFrom("#000"),
+            //        BorderThickness = new Thickness(1),
+            //        Width = 100,
+            //        Child = new TextBlock() { Text = Convert.ToString(row[0]) }
+            //    };
+            //    var block2 = new Border()
+            //    {
+            //        BorderBrush = (SolidColorBrush)new BrushConverter().ConvertFrom("#000"),
+            //        BorderThickness = new Thickness(1),
+            //        Width = 100,
+            //        Child = new TextBlock() { Text = (string)row[1] }
+            //    };
+            //    var block3 = new Border()
+            //    {
+            //        BorderBrush = (SolidColorBrush)new BrushConverter().ConvertFrom("#000"),
+            //        BorderThickness = new Thickness(1),
+            //        Width = 100,
+            //        Child = new TextBlock() { Text = (string)row[2] }
+            //    };
+            //    var block4 = new Border()
+            //    {
+            //        BorderBrush = (SolidColorBrush)new BrushConverter().ConvertFrom("#000"),
+            //        BorderThickness = new Thickness(1),
+            //        Width = 100,
+            //        Child = new TextBlock() { Text = (string)row[3] }
 
-                };
-                var block5 = new Border()
-                {
-                    BorderBrush = (SolidColorBrush)new BrushConverter().ConvertFrom("#000"),
-                    BorderThickness = new Thickness(1),
-                    Width = 100,
-                    Child = new TextBlock() { Text = (string)row[4] }
+            //    };
+            //    var block5 = new Border()
+            //    {
+            //        BorderBrush = (SolidColorBrush)new BrushConverter().ConvertFrom("#000"),
+            //        BorderThickness = new Thickness(1),
+            //        Width = 100,
+            //        Child = new TextBlock() { Text = (string)row[4] }
 
-                };
-                var stack = new StackPanel() { Orientation = Orientation.Horizontal };
-                stack.Children.Add(block1);
-                stack.Children.Add(block2);
-                stack.Children.Add(block3);
-                stack.Children.Add(block4);
-                stack.Children.Add(block5);
-                usersStackTable.Children.Add(stack);
-            }
+            //    };
+            //    var stack = new StackPanel() { Orientation = Orientation.Horizontal };
+            //    stack.Children.Add(block1);
+            //    stack.Children.Add(block2);
+            //    stack.Children.Add(block3);
+            //    stack.Children.Add(block4);
+            //    stack.Children.Add(block5);
+            //    usersStackTable.Children.Add(stack);
+            //}
 
+
+            
 
         }       
 

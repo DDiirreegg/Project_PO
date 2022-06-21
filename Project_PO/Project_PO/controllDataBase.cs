@@ -63,28 +63,28 @@ namespace Project_PO
         //Getting table data
         //==================
 
-        public DataTable Get(string tableName, string columnNames)
-        {
-            //using (SqlConnection Conn = new SqlConnection(_dataBasePath))
-            //{
-            //    Conn.Open();
-            //    string myQuery = "select " + columnNames + " from " + tableName;
+        //public DataTable Get(string tableName, string columnNames)
+        //{
+        //    //using (SqlConnection Conn = new SqlConnection(_dataBasePath))
+        //    //{
+        //    //    Conn.Open();
+        //    //    string myQuery = "select " + columnNames + " from " + tableName;
 
-            //    using (SqlDataAdapter da = new SqlDataAdapter(myQuery, Conn))
-            //    {
-            //        SqlCommandBuilder builder = new SqlCommandBuilder(da);
-            //        var ds = new DataSet();
-            //        da.Fill(ds, "Table");
-            //        DataTable table = ds.Tables["Table"];
-            //        Conn.Close();
-            //        return table;
-            //    }
+        //    //    using (SqlDataAdapter da = new SqlDataAdapter(myQuery, Conn))
+        //    //    {
+        //    //        SqlCommandBuilder builder = new SqlCommandBuilder(da);
+        //    //        var ds = new DataSet();
+        //    //        da.Fill(ds, "Table");
+        //    //        DataTable table = ds.Tables["Table"];
+        //    //        Conn.Close();
+        //    //        return table;
+        //    //    }
 
 
-            //}
+        //    //}
 
-            throw new NotImplementedException();
-        }
+        //    throw new NotImplementedException();
+        //}
 
     }
 }

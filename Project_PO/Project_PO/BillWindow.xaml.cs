@@ -17,11 +17,24 @@ namespace Project_PO
     /// <summary>
     /// Логика взаимодействия для Bill.xaml
     /// </summary>
-    public partial class Bill : Window
+    public partial class BillWindow : Window
     {
-        public Bill()
+        public BillWindow()
         {
             InitializeComponent();
+
+
+            //this.btnGoBack.Content = "Go back test!!!";
+
+            ////this.grdBills
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            using (ProjectContext db = new ProjectContext(ProjectConfig.CONNECTION_STRING))
+            {
+                this.grdBills.ItemsSource = db.Bills.ToList();
+            }
         }
     }
 }

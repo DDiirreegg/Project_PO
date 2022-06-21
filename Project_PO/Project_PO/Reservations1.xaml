@@ -51,12 +51,28 @@
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="1"
             x:Name="usersStackTable"         
-            Background="#C5AFA0"
+            Background="#C5AFA0" Margin="0,193,0,0"
             />
         <StackPanel Grid.Row="1" Grid.Column="1">
             <ListBox> </ListBox>
+            <DataGrid x:Name="grdReservations" Height="184" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <materialDesign:DataGridTextColumn Width="*" Header="idr" Binding="{Binding idr}" IsReadOnly="True"/>
+                    <materialDesign:DataGridTextColumn Width="*" Header="idt" Binding="{Binding idt}" IsReadOnly="True"/>
+                    <materialDesign:DataGridTextColumn Width="*" Header="day" Binding="{Binding day}"/>
+                    <materialDesign:DataGridTextColumn Width="*" Header="time" Binding="{Binding time}"/>
+                    <materialDesign:DataGridTextColumn Width="*" Header="namber" Binding="{Binding namber}"/>
+                    <materialDesign:DataGridTextColumn Width="*" Header="idk" Binding="{Binding idk}"/>
+                </DataGrid.Columns>
+                <DataGrid.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem x:Name="itemEdit" Header="Edit" Click="itemEdit_Click"/>
+                        <MenuItem x:Name="itemRemove" Header="Remove" Click="itemRemove_Click"/>
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
+            </DataGrid>
             
-            
+
         </StackPanel>
         
         

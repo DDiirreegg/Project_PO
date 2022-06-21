@@ -47,7 +47,7 @@ namespace Project_PO
 
         private void Button_Bill_Click(object sender, RoutedEventArgs e)
         {
-            Bill window4 = new Bill();
+            BillWindow window4 = new BillWindow();
             window4.Show();
             this.Close();
         }

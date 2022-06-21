@@ -25,32 +25,60 @@ namespace Project_PO
         public MainWindow()
         {
             InitializeComponent();
+
+
+
+
+
+
+
+
+            //using (ProjectContext db = new ProjectContext(ProjectConfig.CONNECTION_STRING))
+            //{
+
+            //    var bills = db.Bills.ToList();
+
+            //    Console.WriteLine();
+            //}
+
+
+
+
+
+
         }
         SqlConnection Conn = new SqlConnection(@"Data Source=DESKTOP-MO07QQI;Initial Catalog=Project;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 
         bool loginChecker()
         {
-            Conn.Open();
-            string myQuery = "select login, pass, namek, snamek from Users";
-            SqlDataAdapter da = new SqlDataAdapter(myQuery, Conn);
-            SqlCommandBuilder builder = new SqlCommandBuilder(da);
-            var ds = new DataSet();
-            da.Fill(ds, "Users");
-            DataTable usersTable = ds.Tables["Users"];
-            foreach (DataRow row in usersTable.Rows)
+            using (ProjectContext db = new ProjectContext(ProjectConfig.CONNECTION_STRING))
             {
-                if ((string)row["login"] == textBoxLogin.Text && (string)row["pass"] == passBox.Password)
-                {
-                    DataBank.namek = (string)row["namek"];
-                    DataBank.snamek = (string)row["snamek"];
-                    Conn.Close();
-                    return true;
-                }
+                var user = db.Users
+                    .Where(u => u.Login == textBoxLogin.Text && u.pass == passBox.Password)
+                    .FirstOrDefault();
+
+                return user != null;
             }
-            Conn.Close();
-            return false;
 
-
+            //Conn.Open();
+            //string myQuery = "select login, pass, namek, snamek from Users";
+            ////SqlDataAdapter da = new SqlDataAdapter(myQuery, Conn);
+            ////SqlCommandBuilder builder = new SqlCommandBuilder(da);
+            //var ds = new DataSet();
+            ////da.Fill(ds, "Users");
+            //DataTable usersTable = ds.Tables["Users"];
+            //foreach (DataRow row in usersTable.Rows)
+            //{
+            //    if ((string)row["login"] == textBoxLogin.Text && (string)row["pass"] == passBox.Password)
+            //    {
+            //        DataBank.namek = (string)row["namek"];
+            //        DataBank.snamek = (string)row["snamek"];
+            //        Conn.Close();
+            //        return true;
+            //    }
+            //}
+            //Conn.Close();
+            //return false;
         }
         private void Button_login_Click(object sender, RoutedEventArgs e)
         {
