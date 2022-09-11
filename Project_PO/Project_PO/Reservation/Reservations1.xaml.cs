@@ -113,7 +113,6 @@ namespace Project_PO
             {
                 var reservations = db.Reservations.ToList();                                   
                 this.grdReservations.ItemsSource = reservations;
-
             }
 
         }

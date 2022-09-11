@@ -1,0 +1,35 @@
+﻿<Window x:Class="Project_PO.UpdateReservtion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project_PO"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Reservations" Height="350" Width="400" WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+    <Grid Background="PaleGoldenrod" ShowGridLines="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Border Grid.ColumnSpan="1" Grid.Row="0">
+            
+        </Border>
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <TextBox x:Name="textBoxIDTable"  materialDesign:HintAssist.Hint="Enter table number" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+            <TextBox x:Name="textBoxDay"  materialDesign:HintAssist.Hint="Enter reservation date" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+            <TextBox x:Name="textBoxTime"  materialDesign:HintAssist.Hint="Enter reservation time" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+            <TextBox x:Name="textBoxNamber"  materialDesign:HintAssist.Hint="Enter the number of guests" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+            <TextBox x:Name="textBoxIDK"  materialDesign:HintAssist.Hint="Enter the name of the waiter" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+            
+        </StackPanel>
+        
+    </Grid>
+</Window>

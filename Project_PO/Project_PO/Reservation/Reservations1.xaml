@@ -44,9 +44,16 @@
             <Button x:Name="DelReserv" Content="Delete reservation" Margin="10,20,10,0" Click="DelReserv_Click"/>
             <TextBox x:Name="textBoxIDReserv" Margin="10,0,10,0" materialDesign:HintAssist.Hint="Enter the ID to delete" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
             <Button x:Name="EditReserv" Content="Edit reservation" Margin="10,10,10,0"/>
-            <Button x:Name="BtM" Content="Back to menu" Background="Red" VerticalAlignment="Bottom" Margin="10,20,10,0" Click="BtM_Click"/>
-            
-            
+            <Button x:Name="BtM" Content="Back to menu" Background="Red" VerticalAlignment="Bottom" Margin="10,20,10,0" Click="BtM_Click">
+                <Button.ToolTip>
+                    <ToolTip HasDropShadow ="True" Placement ="Right">
+                        To change a reservation, you need to know its id
+                    </ToolTip>                    
+                </Button.ToolTip>
+            </Button>
+
+
+
 
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="1"
