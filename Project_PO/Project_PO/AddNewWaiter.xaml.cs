@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 
 namespace Project_PO
 {
@@ -138,13 +139,12 @@ namespace Project_PO
                     using (ProjectContext db = new ProjectContext(ProjectConfig.CONNECTION_STRING))
                     {
                         int numWD = Int32.Parse(textBoxIDel.Text);
-                        var uRow = db.Reservations.Where(w => w.idr == numWD).FirstOrDefault();
+                        var uRow = db.Users.Where(w => w.IdK == numWD).FirstOrDefault();
                         {
-                            //uRow.idt = Int32.Parse(textBoxIDTableUpd.Text);
-                            //uRow.day = DateTime.Parse(textBoxDayUpd.Text);
-                            //uRow.time = TimeSpan.Parse(textBoxTimeUpd.Text);
-                            //uRow.namber = Int32.Parse(textBoxNamberUpd.Text);
-                            //uRow.idk = Int32.Parse(textBoxIDKUpd.Text);
+                            uRow.Login = textBoxLogReg.Text;
+                            uRow.pass = textBoxPassReg.Text;
+                            uRow.namek = textBoxNameReg.Text;
+                            uRow.snamek = textBoxSNameReg.Text;
                         };
 
                         db.SaveChanges();
