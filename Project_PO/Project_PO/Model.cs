@@ -17,7 +17,7 @@ namespace Project_PO
         public DbSet<User> Users { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
         public DbSet<Bill> Bills { get; set; }
-        public DbSet<Menu> Menus { get; set; }
+        public DbSet<Menu> Menu { get; set; }
         
 
         public string ConnectionString { get; }
@@ -67,7 +67,7 @@ namespace Project_PO
         public string tips { get; set; }
     }
     [Table("Menus")]
-    public class MenU
+    public class Menu
     {
         [Key]
         public int iddish { get; set; }

@@ -40,7 +40,7 @@ namespace Project_PO
 
         private void Button_Menu_Click(object sender, RoutedEventArgs e)
         {
-            Menu window3 = new Menu();
+            MenuW window3 = new MenuW();
             window3.Show();
             this.Close();
         }       
