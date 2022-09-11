@@ -31,22 +31,33 @@
         </Border>
         <Border Grid.Row="1" Grid.Column="0" Background="Aqua">
             <StackPanel>
-                <Button x:Name="AddWaiter" Content="Add new waiter" Margin="10,20,10,0" Click="AddWaiter_Click" />                
-                <Button x:Name="DelReserv" Content="Delete waiter" Margin="10,20,10,0" Click="DelReserv_Click"/>
-                <Button x:Name="BtM" Content="Back to menu" Background="Red" VerticalAlignment="Bottom" Margin="10,20,10,0" Click="BtM_Click"/>
+                <Button x:Name="AddWaiter" Content="Add new waiter" Margin="10,20,10,0" Click="AddWaiter_Click" />
                 <TextBox x:Name="textBoxLogReg"  materialDesign:HintAssist.Hint="Enter the login of the waiter" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                 <TextBox x:Name="textBoxPassReg"  materialDesign:HintAssist.Hint="Enter the password of the waiter" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                 <TextBox x:Name="textBoxNameReg"  materialDesign:HintAssist.Hint="Enter the name of the waiter" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                 <TextBox x:Name="textBoxSNameReg"  materialDesign:HintAssist.Hint="Enter waiter's last name" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
-                <TextBox x:Name="textBoxIDel" materialDesign:HintAssist.Hint="Enter waiter's ID" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
-            </StackPanel>
-            
+                <Button x:Name="DelReserv" Content="Delete waiter" Margin="10,20,10,0" Click="DelReserv_Click"/>
+                <TextBox x:Name="textBoxIDel" materialDesign:HintAssist.Hint="Enter waiter's ID" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Cursor="Arrow" />
+                <Button x:Name="BtM" Content="Back to menu" Background="Red" VerticalAlignment="Bottom" Margin="10,20,10,0" Click="BtM_Click"/>               
+                
+            </StackPanel>              
         </Border>
-                <StackPanel Grid.Row="1" Grid.Column="1"
-            x:Name="usersStackTable"         
-            Background="#C5AFA0"
-            />
 
+        <StackPanel Grid.Column="1" Grid.Row="1" >
+            <DataGrid x:Name="grdNewUser" Height="442" AutoGenerateColumns="False" Width="519" SelectionChanged="grdNewUser_SelectionChanged">
+                <DataGrid.Columns>
+                    <materialDesign:DataGridTextColumn Width="*" Header="Waiter ID" Binding="{Binding IdK}" IsReadOnly="True" />
+                    <materialDesign:DataGridTextColumn Width="*" Header="Waiter's surname " Binding="{Binding snamek}" />
+                    <materialDesign:DataGridTextColumn Width="*" Header="Waiter's name" Binding="{Binding namek}"/>                      
+                </DataGrid.Columns>   
+            </DataGrid>
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="1" Width="200" Height="60" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,10" Orientation="Horizontal" >
+            <Button x:Name="RefreshTable" HorizontalAlignment="Right" VerticalAlignment="Center" Height="40" Width="100" Content="Refresh" Margin="0,20,0,0" Click="RefreshTable_Click"></Button>
+            <Button x:Name="IdetClick" HorizontalAlignment="Right" VerticalAlignment="Center" Height="40" Width="100" Margin="0,20,0,0" Content="Edit" Click="IdetClick_Click"></Button>
+            
+        </StackPanel>
+                
 
     </Grid>
 </Window>

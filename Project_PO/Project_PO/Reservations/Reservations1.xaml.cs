@@ -120,7 +120,35 @@ namespace Project_PO
 
         private void itemEdit_Click(object sender, RoutedEventArgs e)
         {
+            UpdateReservtion window10 = new UpdateReservtion();               
+            window10.Show();
             
-        }         
+        }
+
+        private void allResev_Click(object sender, RoutedEventArgs e)
+        {
+            showAllUsers();
+        }
+
+        private void todayReserv_Click(object sender, RoutedEventArgs e)
+        {
+            
+            using (ProjectContext db = new ProjectContext(ProjectConfig.CONNECTION_STRING))
+            {
+                var todayREserv = db.Reservations.Where(w => w.day == DateTime.Today).ToList();
+                grdReservations.ItemsSource = todayREserv;
+
+            }
+        }
+
+        private void Refresh_Click(object sender, RoutedEventArgs e)
+        {
+            showAllUsers();
+        }
+        private void Refresh1(object sender, RoutedEventArgs e)
+        {
+            showAllUsers();
+        }
+
     }
 }

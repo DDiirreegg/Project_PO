@@ -23,9 +23,7 @@ namespace Project_PO
         public AddNewWaiter()
         {
             InitializeComponent();            
-        }
-        static string path = @"Data Source=DESKTOP-MO07QQI;Initial Catalog=Project;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-        controllDataBase contr = new controllDataBase(path);
+        }       
 
         private void AddWaiter_Click(object sender, RoutedEventArgs e)
         {
@@ -38,8 +36,23 @@ namespace Project_PO
                 }
                 else
                 {
-                    contr.Add("Users", "" + textBoxLogReg.Text + "','" + textBoxPassReg.Text + "', '" + textBoxNameReg.Text + "', '" + textBoxSNameReg.Text + "");
+
+                    using (ProjectContext db = new ProjectContext(ProjectConfig.CONNECTION_STRING))
+                    {
+                        var userAdd = new User()
+                        {
+                            Login = textBoxLogReg.Text,
+                            pass = textBoxPassReg.Text,
+                            namek = textBoxNameReg.Text,
+                            snamek = textBoxSNameReg.Text,                            
+                        };
+
+                        db.Users.Add(userAdd);
+                        db.SaveChanges();
+
+                    }
                     MessageBox.Show("Successfully");
+                    showAllUsers();
                 }    
                 
             }
@@ -55,8 +68,22 @@ namespace Project_PO
         {
             try
             {
-                contr.Delete("Users", "idk", textBoxIDel.Text);
-                MessageBox.Show("Delete is correct");
+                if (textBoxIDel.Text == string.Empty)
+                {
+                    MessageBox.Show("Inputs is empty!");
+                }
+                else
+                {
+                    using (ProjectContext db = new ProjectContext(ProjectConfig.CONNECTION_STRING))
+                    {
+                        var itemToDelet = db.Users.SingleOrDefault(z => z.IdK == Int32.Parse(textBoxIDel.Text)); ;
+                        db.Users.Remove(itemToDelet);
+                        db.SaveChanges();
+                    }
+                    MessageBox.Show("Successfully");
+                    showAllUsers();
+                }
+
             }
             catch (Exception)
             {
@@ -68,107 +95,9 @@ namespace Project_PO
 
         void showAllUsers()
         {
-            usersStackTable.Children.Clear();
-
-
-
-            var HeaderBlock1 = new Border()
-            {
-                BorderBrush = (SolidColorBrush)new BrushConverter().ConvertFrom("#000"),
-                BorderThickness = new Thickness(1),
-                Width = 100,
-                Child = new TextBlock() { Text = "ID", Background = (SolidColorBrush)new BrushConverter().ConvertFrom("#ff0000") }
-            };
-            var HeaderBlock2 = new Border()
-            {
-                BorderBrush = (SolidColorBrush)new BrushConverter().ConvertFrom("#000"),
-                BorderThickness = new Thickness(1),
-                Width = 100,
-                Child = new TextBlock() { Text = "Login", Background = (SolidColorBrush)new BrushConverter().ConvertFrom("#ff0000") }
-            };
-            var HeaderBlock3 = new Border()
-            {
-                BorderBrush = (SolidColorBrush)new BrushConverter().ConvertFrom("#000"),
-                BorderThickness = new Thickness(1),
-                Width = 100,
-                Child = new TextBlock() { Text = "Password", Background = (SolidColorBrush)new BrushConverter().ConvertFrom("#ff0000") }
-            };
-            var HeaderBlock4 = new Border()
-            {
-                BorderBrush = (SolidColorBrush)new BrushConverter().ConvertFrom("#000"),
-                BorderThickness = new Thickness(1),
-                Width = 100,
-                Child = new TextBlock() { Text = "Name", Background = (SolidColorBrush)new BrushConverter().ConvertFrom("#ff0000") }
-            };
-            var HeaderBlock5 = new Border()
-            {
-                BorderBrush = (SolidColorBrush)new BrushConverter().ConvertFrom("#000"),
-                BorderThickness = new Thickness(1),
-                Width = 100,
-                Child = new TextBlock() { Text = "Surname", Background = (SolidColorBrush)new BrushConverter().ConvertFrom("#ff0000") }
-            };
-            var stackHeader = new StackPanel() { Orientation = Orientation.Horizontal, };
-            stackHeader.Children.Add(HeaderBlock1);
-            stackHeader.Children.Add(HeaderBlock2);
-            stackHeader.Children.Add(HeaderBlock3);
-            stackHeader.Children.Add(HeaderBlock4);
-            stackHeader.Children.Add(HeaderBlock5);
-            usersStackTable.Children.Add(stackHeader);
-
-
-            //DataTable usersTable = contr.Get("Users", "*");
-            //foreach (DataRow row in usersTable.Rows)
-            //{
-
-            //    var block1 = new Border()
-            //    {
-            //        BorderBrush = (SolidColorBrush)new BrushConverter().ConvertFrom("#000"),
-            //        BorderThickness = new Thickness(1),
-            //        Width = 100,
-            //        Child = new TextBlock() { Text = Convert.ToString(row[0]) }
-            //    };
-            //    var block2 = new Border()
-            //    {
-            //        BorderBrush = (SolidColorBrush)new BrushConverter().ConvertFrom("#000"),
-            //        BorderThickness = new Thickness(1),
-            //        Width = 100,
-            //        Child = new TextBlock() { Text = (string)row[1] }
-            //    };
-            //    var block3 = new Border()
-            //    {
-            //        BorderBrush = (SolidColorBrush)new BrushConverter().ConvertFrom("#000"),
-            //        BorderThickness = new Thickness(1),
-            //        Width = 100,
-            //        Child = new TextBlock() { Text = (string)row[2] }
-            //    };
-            //    var block4 = new Border()
-            //    {
-            //        BorderBrush = (SolidColorBrush)new BrushConverter().ConvertFrom("#000"),
-            //        BorderThickness = new Thickness(1),
-            //        Width = 100,
-            //        Child = new TextBlock() { Text = (string)row[3] }
-
-            //    };
-            //    var block5 = new Border()
-            //    {
-            //        BorderBrush = (SolidColorBrush)new BrushConverter().ConvertFrom("#000"),
-            //        BorderThickness = new Thickness(1),
-            //        Width = 100,
-            //        Child = new TextBlock() { Text = (string)row[4] }
-
-            //    };
-            //    var stack = new StackPanel() { Orientation = Orientation.Horizontal };
-            //    stack.Children.Add(block1);
-            //    stack.Children.Add(block2);
-            //    stack.Children.Add(block3);
-            //    stack.Children.Add(block4);
-            //    stack.Children.Add(block5);
-            //    usersStackTable.Children.Add(stack);
-            //}
-
-
-            
-
+            using ProjectContext db = new ProjectContext(ProjectConfig.CONNECTION_STRING);
+            var userlist = db.Users.ToList();
+            this.grdNewUser.ItemsSource = userlist;
         }       
 
         private void BtM_Click(object sender, RoutedEventArgs e)
@@ -180,8 +109,60 @@ namespace Project_PO
         private void Refresh(object sender, RoutedEventArgs e)
         {
             showAllUsers();
-            nameK.Content = DataBank.namek;
-            snameK.Content = DataBank.snamek;
         }
+
+        private void grdNewUser_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            showAllUsers();
+        }
+
+        private void RefreshTable_Click(object sender, RoutedEventArgs e)
+        {
+            showAllUsers();
+        }
+
+        private void IdetClick_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (textBoxIDel.Text == string.Empty)
+                {
+                    MessageBox.Show("You have not entered a waiter ID!");
+                }
+                if (textBoxLogReg.Text == string.Empty && textBoxPassReg.Text == string.Empty && textBoxNameReg.Text == string.Empty && textBoxSNameReg.Text == string.Empty)
+                {
+                    MessageBox.Show("Some inputs are empty!");
+                }
+                else
+                {
+                    using (ProjectContext db = new ProjectContext(ProjectConfig.CONNECTION_STRING))
+                    {
+                        int numWD = Int32.Parse(textBoxIDel.Text);
+                        var uRow = db.Reservations.Where(w => w.idr == numWD).FirstOrDefault();
+                        {
+                            //uRow.idt = Int32.Parse(textBoxIDTableUpd.Text);
+                            //uRow.day = DateTime.Parse(textBoxDayUpd.Text);
+                            //uRow.time = TimeSpan.Parse(textBoxTimeUpd.Text);
+                            //uRow.namber = Int32.Parse(textBoxNamberUpd.Text);
+                            //uRow.idk = Int32.Parse(textBoxIDKUpd.Text);
+                        };
+
+                        db.SaveChanges();
+
+                    }
+                    MessageBox.Show("Successfully");
+                    showAllUsers();
+
+                }
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Unable to update reservation");
+            }
+        }
+
+        
     }
 }

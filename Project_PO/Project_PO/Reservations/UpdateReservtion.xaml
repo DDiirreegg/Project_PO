@@ -1,0 +1,47 @@
+﻿<Window x:Class="Project_PO.UpdateReservtion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project_PO"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Reservations" Height="350" Width="400" WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen" AllowDrop="True"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown">
+
+    <Grid Background="PaleGoldenrod" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Background="Beige">
+            <TextBlock Cursor="None" HorizontalAlignment="Center" Margin="0,10,0,0" >
+                Reservation Update
+            </TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <TextBox x:Name="textBoxIDReservUpd"  materialDesign:HintAssist.Hint="Enter reservation ID" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="2" >
+            
+            <TextBox x:Name="textBoxIDTableUpd"  materialDesign:HintAssist.Hint="Enter table number" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+            <TextBox x:Name="textBoxDayUpd"  materialDesign:HintAssist.Hint="Enter reservation date" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+            <TextBox x:Name="textBoxTimeUpd"  materialDesign:HintAssist.Hint="Enter reservation time" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+            <TextBox x:Name="textBoxNamberUpd"  materialDesign:HintAssist.Hint="Enter the number of guests" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+            <TextBox x:Name="textBoxIDKUpd"  materialDesign:HintAssist.Hint="Enter the name of the waiter" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+            
+
+        </StackPanel>
+        <StackPanel Grid.Row="3">
+            <Button x:Name="UpdateReserv" Content="Update" Height="36" Width="300" Click="UpdateReserv_Click"></Button>
+            <Button x:Name="BackToReserv" Content="Cancle" Height="36" Width="300" Background="Red" Click="BackToReserv_Click"/>
+            
+        </StackPanel>
+
+    </Grid>
+</Window>
