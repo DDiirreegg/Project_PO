@@ -29,25 +29,25 @@ namespace Project_PO
 
         private void BtM_Click(object sender, RoutedEventArgs e)
         {
-            if(DataBank.namek == "admin" && DataBank.snamek == "admin")
-            {
-                MainFormAdmin window1 = new MainFormAdmin();
-                window1.Show();
-                this.Close();
-            }
-            else
-            {
-                MainForm window = new MainForm();
-                window.Show();
-                this.Close();
-            }
-            
+            //if (DataBank.namek == "admin" && DataBank.snamek == "admin")
+            //{
+            //    MainFormAdmin window1 = new MainFormAdmin();
+            //    window1.Show();
+            //    this.Close();
+            //}
+            //else
+            //{
+            //    MainForm window = new MainForm();
+            //    window.Show();
+            //    this.Close();
+            //}
+
         }
         public void Refresh(object sender, RoutedEventArgs e)
         {
-            showAllUsers();
-            nameK.Content = DataBank.namek;
-            snameK.Content = DataBank.snamek;
+            //showAllUsers();
+            //nameK.Content = DataBank.namek;
+            //snameK.Content = DataBank.snamek;
         }
 
         private void AddReserv_Click(object sender, RoutedEventArgs e)
@@ -64,20 +64,18 @@ namespace Project_PO
                     {
                         var reservation = new Reservation()
                         {
-                            idt = 4,
-                            day = DateTime.Now.Date,
-                            time = new TimeSpan(10, 15, 30),
-                            namber = 3,
-                            idk = 2
+                            idt = Int32.Parse(textBoxIDTable.Text),
+                            day = DateTime.Parse(textBoxDay.Text),
+                            time = TimeSpan.Parse(textBoxTime.Text),
+                            namber = Int32.Parse(textBoxNamber.Text),
+                            idk = Int32.Parse(textBoxIDK.Text),
+                            //idk = Convert.ToInt32(textBoxIDK),
                         };
 
                         db.Reservations.Add(reservation);
                         db.SaveChanges();
 
-                    }
-
-                    // https://www.researchgate.net/profile/Muhammad-Iqbal-274/publication/322250414/figure/fig3/AS:579066325864448@1515071578177/A-SQL-injection-attack.png
-                    //contr.Add("Reservations", "" + textBoxIDTable.Text + "', '" + textBoxDay.Text + "', '" + textBoxTime.Text + "', '" + textBoxNamber.Text + "', '" + textBoxIDK + "" );
+                    }                     
                     MessageBox.Show("Successfully");
                 }
 
@@ -85,19 +83,37 @@ namespace Project_PO
             catch (Exception)
             {
 
-                MessageBox.Show("Unable to add waiter");
+                MessageBox.Show("Unable to add reservation");
             }
             showAllUsers();
 
 
         }
 
+        
         private void DelReserv_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                contr.Delete("Reservations", "idr", textBoxIDReserv.Text);
-                MessageBox.Show("Delete is correct");
+                if (textBoxIDReserv.Text == string.Empty)
+                {
+                    MessageBox.Show("Inputs is empty!");
+                }
+                else
+                {
+                    using (ProjectContext db = new ProjectContext(ProjectConfig.CONNECTION_STRING))
+                    {
+
+                        var itemToRemove = db.Reservations.SingleOrDefault(x => x.idr == Int32.Parse(textBoxIDReserv.Text)); ;
+                        db.Reservations.Remove(itemToRemove);
+                        db.SaveChanges();
+
+                    }
+
+                    
+                    MessageBox.Show("Successfully");
+                }
+
             }
             catch (Exception)
             {

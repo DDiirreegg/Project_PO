@@ -57,12 +57,12 @@
             <ListBox> </ListBox>
             <DataGrid x:Name="grdReservations" Height="184" AutoGenerateColumns="False">
                 <DataGrid.Columns>
-                    <materialDesign:DataGridTextColumn Width="*" Header="idr" Binding="{Binding idr}" IsReadOnly="True"/>
-                    <materialDesign:DataGridTextColumn Width="*" Header="idt" Binding="{Binding idt}" IsReadOnly="True"/>
-                    <materialDesign:DataGridTextColumn Width="*" Header="day" Binding="{Binding day}"/>
-                    <materialDesign:DataGridTextColumn Width="*" Header="time" Binding="{Binding time}"/>
-                    <materialDesign:DataGridTextColumn Width="*" Header="namber" Binding="{Binding namber}"/>
-                    <materialDesign:DataGridTextColumn Width="*" Header="idk" Binding="{Binding idk}"/>
+                    <materialDesign:DataGridTextColumn Width="*" Header="Reservation number" Binding="{Binding idr}" IsReadOnly="True"/>
+                    <materialDesign:DataGridTextColumn Width="*" Header="Table number" Binding="{Binding idt}" IsReadOnly="True"/>
+                    <materialDesign:DataGridTextColumn Width="*" Header="Date" Binding="{Binding day}"/>
+                    <materialDesign:DataGridTextColumn Width="*" Header="Time of reservation " Binding="{Binding time}"/>
+                    <materialDesign:DataGridTextColumn Width="*" Header="Namber of people" Binding="{Binding namber}"/>
+                    <materialDesign:DataGridTextColumn Width="*" Header="Waiter number" Binding="{Binding idk}"/>
                 </DataGrid.Columns>
                 <DataGrid.ContextMenu>
                     <ContextMenu>
