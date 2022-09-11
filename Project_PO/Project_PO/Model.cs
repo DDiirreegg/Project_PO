@@ -17,7 +17,8 @@ namespace Project_PO
         public DbSet<User> Users { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
         public DbSet<Bill> Bills { get; set; }
-        //public DbSet<Post> Posts { get; set; }
+        public DbSet<Menu> Menus { get; set; }
+        
 
         public string ConnectionString { get; }
 
@@ -61,26 +62,18 @@ namespace Project_PO
     public class Bill
     {
         [Key]
-        public int IdBill { get; set; }
-        public string SumBill { get; set; }
-        public string Tips { get; set; }
+        public int idbill { get; set; }
+        public string sumbill { get; set; }
+        public string tips { get; set; }
     }
+    [Table("Menus")]
+    public class MenU
+    {
+        [Key]
+        public int iddish { get; set; }
+        public string namedish { get; set; }
+        public int costdish { get; set; }   
+        public string description { get; set; }
 
-    //public class Blog
-    //{
-    //    public long Id { get; set; }
-    //    public string Url { get; set; }
-
-    //    public List<Post> Posts { get; } = new();
-    //}
-
-    //public class Post
-    //{
-    //    public long Id { get; set; }
-    //    public string Title { get; set; }
-    //    public string Content { get; set; }
-
-    //    public long BlogId { get; set; }
-    //    public Blog Blog { get; set; }
-    //}
+    }
 }

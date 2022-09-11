@@ -9,7 +9,7 @@
         Title="Reservations" Height="600" Width="800" WindowStyle="None"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
-        Loaded="Refresh"
+        
         >
     <Grid Background="AntiqueWhite">
         <Grid.RowDefinitions>
@@ -51,13 +51,13 @@
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="1"
             x:Name="usersStackTable"         
-            Background="#C5AFA0" Margin="0,193,0,0"
+            Background="AntiqueWhite" Margin="0,193,0,0"
             />
         <StackPanel Grid.Row="1" Grid.Column="1">
             <ListBox> </ListBox>
-            <DataGrid x:Name="grdReservations" Height="184" AutoGenerateColumns="False">
+            <DataGrid x:Name="grdReservations" Height="442" AutoGenerateColumns="False" Width="583">
                 <DataGrid.Columns>
-                    <materialDesign:DataGridTextColumn Width="*" Header="Reservation number" Binding="{Binding idr}" IsReadOnly="True"/>
+                    <materialDesign:DataGridTextColumn Width="*" Header="Reservation number" Binding="{Binding idr}" IsReadOnly="True" />
                     <materialDesign:DataGridTextColumn Width="*" Header="Table number" Binding="{Binding idt}" IsReadOnly="True"/>
                     <materialDesign:DataGridTextColumn Width="*" Header="Date" Binding="{Binding day}"/>
                     <materialDesign:DataGridTextColumn Width="*" Header="Time of reservation " Binding="{Binding time}"/>
@@ -67,7 +67,7 @@
                 <DataGrid.ContextMenu>
                     <ContextMenu>
                         <MenuItem x:Name="itemEdit" Header="Edit" Click="itemEdit_Click"/>
-                        <MenuItem x:Name="itemRemove" Header="Remove" Click="itemRemove_Click"/>
+                        <MenuItem x:Name="itemRemove" Header="Remove" />
                     </ContextMenu>
                 </DataGrid.ContextMenu>
             </DataGrid>
