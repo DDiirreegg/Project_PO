@@ -54,7 +54,13 @@
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="1" Width="200" Height="60" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,10" Orientation="Horizontal" >
             <Button x:Name="RefreshTable" HorizontalAlignment="Right" VerticalAlignment="Center" Height="40" Width="100" Content="Refresh" Margin="0,20,0,0" Click="RefreshTable_Click"></Button>
-            <Button x:Name="IdetClick" HorizontalAlignment="Right" VerticalAlignment="Center" Height="40" Width="100" Margin="0,20,0,0" Content="Edit" Click="IdetClick_Click"></Button>
+            <Button x:Name="IdetClick" HorizontalAlignment="Right" VerticalAlignment="Center" Height="40" Width="100" Margin="0,20,0,0" Content="Edit" Click="IdetClick_Click">
+                <Button.ToolTip>
+                    <ToolTip HasDropShadow ="True" Placement ="Left">
+                        To change user data, please fill in all fields, enter user ID and click "Edit" button
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
             
         </StackPanel>
                 

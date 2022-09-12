@@ -1,0 +1,27 @@
+﻿<Window x:Class="Project_PO.EditSomeDishinMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project_PO"
+        mc:Ignorable="d"          
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Title="AddNewDishInMenu" Height="270" Width="200" WindowStyle="None"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown">
+
+    <Grid Background="Aquamarine">
+        <StackPanel>
+            <Label Foreground="Blue" HorizontalAlignment="Center" Margin="0,10,0,0">Add new dish</Label>
+            <TextBox x:Name="textBoxIDDish" Margin="10,0,10,0" materialDesign:HintAssist.Hint="Enter dish ID" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+            <TextBox x:Name="textBoxNameDish" Margin="10,0,10,0" materialDesign:HintAssist.Hint="Enter the name of the dish" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+            <TextBox x:Name="textBoxCostDish" Margin="10,0,10,0" materialDesign:HintAssist.Hint="Enter the price of the dish" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+            <TextBox x:Name="textBoxDescrip" Margin="10,0,10,0" materialDesign:HintAssist.Hint="Enter a description of the dish" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+            <Button x:Name="editDish" Margin="30,10,30,10" Content="Edit" Click="editDish_Click"/>
+            <Button x:Name="cancleEdit" Margin="30,0,30,0" Background="Red" Content="Cancle" Click="cancleEdit_Click"/>
+
+        </StackPanel>
+
+    </Grid>
+</Window>

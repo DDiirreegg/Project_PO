@@ -60,33 +60,13 @@ namespace Project_PO
                 return user != null;
             }
 
-            //Conn.Open();
-            //string myQuery = "select login, pass, namek, snamek from Users";
-            ////SqlDataAdapter da = new SqlDataAdapter(myQuery, Conn);
-            ////SqlCommandBuilder builder = new SqlCommandBuilder(da);
-            //var ds = new DataSet();
-            ////da.Fill(ds, "Users");
-            //DataTable usersTable = ds.Tables["Users"];
-            //foreach (DataRow row in usersTable.Rows)
-            //{
-            //    if ((string)row["login"] == textBoxLogin.Text && (string)row["pass"] == passBox.Password)
-            //    {
-            //        DataBank.namek = (string)row["namek"];
-            //        DataBank.snamek = (string)row["snamek"];
-            //        Conn.Close();
-            //        return true;
-            //    }
-            //}
-            //Conn.Close();
-            //return false;
+            
         }
         private void Button_login_Click(object sender, RoutedEventArgs e)
         {
 
             if (textBoxLogin.Text == "admin" && passBox.Password == "admin")
-            {
-                DataBank.namek = "admin";
-                DataBank.snamek = "admin";
+            {                    
                 MainFormAdmin window1 = new MainFormAdmin();
                 window1.Show();
                 this.Close();
@@ -102,39 +82,7 @@ namespace Project_PO
                 MessageBox.Show("Doesn't correct or something else problems");
             }
 
-        }
-
-
-
-
-
-
-
-
-        /*string login = textBoxLogin.Text;
-        string pass = passBox.Password;
-
-        if(login.Length < 7)
-        {
-            textBoxLogin.ToolTip = "Field entered incorrectly";
-            textBoxLogin.Background = Brushes.MediumVioletRed;
-        }
-        else if(pass.Length < 5)
-        {
-            passBox.ToolTip = "Field entered incorrectly";
-            passBox.Background = Brushes.MediumVioletRed;
-        }
-        else
-        {
-            textBoxLogin.ToolTip = "";
-            passBox.ToolTip = "";
-            textBoxLogin.Background = Brushes.Transparent;
-            passBox.Background = Brushes.Transparent;
-
-            MessageBox.Show("all is correct");
-        }*/
-
-
+        }        
 
         private void Button_logout_Click(object sender, RoutedEventArgs e)
         {

@@ -16,7 +16,7 @@ namespace Project_PO
 
         public DbSet<User> Users { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
-        public DbSet<Bill> Bills { get; set; }
+        public DbSet<Bill> Bill { get; set; }
         public DbSet<Menu> Menu { get; set; }
         
 
@@ -58,15 +58,16 @@ namespace Project_PO
         public int idk { get; set; }
     }
 
-    [Table("Bills")]
+    [Table("Bill")]
     public class Bill
     {
         [Key]
         public int idbill { get; set; }
-        public string sumbill { get; set; }
-        public string tips { get; set; }
+        public string dishes { get; set; }
+        public int sumbill { get; set; }
+        
     }
-    [Table("Menus")]
+    [Table("Menu")]
     public class Menu
     {
         [Key]

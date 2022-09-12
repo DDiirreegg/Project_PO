@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace Project_PO
 {
     /// <summary>
-    /// Логика взаимодействия для MainFormAdmin.xaml
+    /// Логика взаимодействия для MainForm.xaml
     /// </summary>
-    public partial class MainFormAdmin : Window
+    public partial class MainForm : Window
     {
-        public MainFormAdmin()
+        public MainForm()
         {
             InitializeComponent();
         }
@@ -43,7 +43,7 @@ namespace Project_PO
             MenuW window3 = new MenuW();
             window3.Show();
             this.Close();
-        }
+        }       
 
         private void Button_Bill_Click(object sender, RoutedEventArgs e)
         {
@@ -51,17 +51,6 @@ namespace Project_PO
             window4.Show();
             this.Close();
         }
-
-        private void Button_AddNW_Click(object sender, RoutedEventArgs e)
-        {
-            AddNewWaiter window5 = new AddNewWaiter();
-            window5.Show();
-            this.Close();
-        }
-        private void Refresh(object sender, RoutedEventArgs e)
-        {
-            lognamek.Content = DataBank.namek;
-            logsnamek.Content = DataBank.snamek;
-        }
+        
     }
 }

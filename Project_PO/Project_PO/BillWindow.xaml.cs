@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialDesignThemes.Wpf;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,17 +24,33 @@ namespace Project_PO
         {
             InitializeComponent();
 
-
-            //this.btnGoBack.Content = "Go back test!!!";
-
-            ////this.grdBills
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            showAllUsers();
+        }
+                
+
+        private void grdBills_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            showAllUsers();
+        }
+        void showAllUsers()
+        {
             using (ProjectContext db = new ProjectContext(ProjectConfig.CONNECTION_STRING))
             {
-                this.grdBills.ItemsSource = db.Bills.ToList();
+                var billInList = db.Bill.ToList();   
+                this.grdBills.ItemsSource = billInList;
+
+            }
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            using (ProjectContext db = new ProjectContext(ProjectConfig.CONNECTION_STRING))
+            {
+                this.cbBBill.ItemsSource = db.Bill.OrderBy(i => i.idbill).ToList();
             }
         }
     }

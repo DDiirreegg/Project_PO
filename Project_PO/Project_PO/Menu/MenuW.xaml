@@ -1,0 +1,42 @@
+﻿<Window x:Class="Project_PO.MenuW"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project_PO"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+        mc:Ignorable="d"
+        Title="Bill" Height="450" Width="800" Loaded="Window_Loaded" WindowStyle="None" VerticalAlignment="Center"
+        WindowStartupLocation="CenterScreen">
+    
+    <Grid Background="Aquamarine">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="15*"/>            
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="15*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="1" Grid.Column="1" >
+            <DataGrid x:Name="grdMenu" AutoGenerateColumns="False" Height="380" Margin="0,0,10,0">
+                <DataGrid.Columns>
+                    <materialDesign:DataGridTextColumn Width="1*" Header="Dish number" Binding="{Binding iddish}"/>
+                    <materialDesign:DataGridTextColumn Width="2*" Header="Name of the dish" Binding="{Binding namedish}"/>
+                    <materialDesign:DataGridTextColumn Width="1*" Header="Meal price" Binding="{Binding costdish}"/>
+                    <materialDesign:DataGridTextColumn Width="2*" Header="Description of the dish" Binding="{Binding description}"/>
+                </DataGrid.Columns>               
+                
+            </DataGrid>
+            
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <Button x:Name="addDish" Margin="10,60,10,0" Content="Add" Click="addDish_Click"/>
+            <Button x:Name="deletDish" Margin="10,30,10,0" Content="Delet" Click="deletDish_Click"/>
+            <Button x:Name="editDish" Margin="10,30,10,0" Content="Edit" Click="editDish_Click"/>
+            <Button x:Name="RefreshDish" Margin="10,30,10,0" Content="Refresh" Click="RefreshDish_Click"/>
+            <Button x:Name="back" Margin="10,70,10,0" Background="red" Content="Back" Click="back_Click"/>
+        </StackPanel>
+
+    </Grid>
+</Window>

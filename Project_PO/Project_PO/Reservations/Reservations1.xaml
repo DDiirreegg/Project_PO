@@ -11,7 +11,7 @@
         WindowStartupLocation="CenterScreen"
         Loaded="Refresh1"
         >
-    <Grid Background="AntiqueWhite">
+    <Grid Background="Aquamarine">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="3*"></RowDefinition>
