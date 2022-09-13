@@ -1,0 +1,44 @@
+﻿<Window x:Class="Project_PO.Add_Edit_Bill"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project_PO"
+        mc:Ignorable="d"          
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Title="AddNewDishInMenu" Height="200" Width="500" WindowStyle="None"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown">
+    <Grid Background="Aquamarine">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" Margin="0,5,0,0">
+            Add new bill and Add a dish to the bill
+        </Label>
+        <ComboBox x:Name="idBillToAddEdit" Grid.Row="1" VerticalAlignment="Top" Margin="5,10,5,0" materialDesign:HintAssist.Hint="Select bill ID">
+            
+        </ComboBox>
+        <ComboBox x:Name="dishToAddEdit" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Margin="5,10,5,0" materialDesign:HintAssist.Hint="Select the dish" materialDesign:ComboBoxAssist.ShowSelectedItem ="True">
+            
+        </ComboBox>
+        <StackPanel Grid.Row="1" Grid.Column="2" VerticalAlignment="Bottom">
+            <Button x:Name="addEdit" Margin="20,0,20,0" Cursor="Hand" Content="Add" Click="addEdit_Click">
+                <Button.ToolTip>
+                    <ToolTip HasDropShadow ="True" Placement ="Left">
+                        To create a new bill, simply select a dish and click add. To add a dish to the bill, select the bill id and the desired dish and click add
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button x:Name="cancleAdd" Margin="20,20,20,15" Background="Red" Content="Cancle" Click="cancleAdd_Click"/>
+        </StackPanel>
+        
+    </Grid>
+</Window>

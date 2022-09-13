@@ -35,19 +35,15 @@
 
 
         <StackPanel Grid.Row="1" Grid.Column="0">
-            <Button x:Name="AddReserv" Content="Add reservation" Margin="10,20,10,0"  />              
-            <Button x:Name="DelReserv" Content="Delete reservation" Margin="10,20,10,0" />
-            <Button x:Name="BtM" Content="Back to menu" Background="Red" VerticalAlignment="Bottom" Margin="10,20,10,0"/>
+            <Button x:Name="AddReserv" Content="New/ Add in the bill" Margin="10,20,10,0" Click="AddReserv_Click"  />              
+            <Button x:Name="DelReserv" Content="Delete the bill" Margin="10,20,10,0" Click="DelReserv_Click"/>
+            <Button x:Name="BtM" Content="Back to menu" Background="Red" VerticalAlignment="Bottom" Margin="10,20,10,0" Click="BtM_Click"/>
             <!--<ComboBox x:Name="CBID" Width="120" Margin="0,50,0,0" Background="Chocolate" SelectionChanged="CBID_SelectionChanged" />-->
-            <ComboBox x:Name="cbBBill" ItemsSource="{Binding Bill}" SelectionChanged="ComboBox_SelectionChanged">
-                
-                
-            </ComboBox>
+            
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="0" Margin="174,100,0,10" Orientation="Horizontal" HorizontalAlignment="Left" Width="414" >
-            <Button x:Name="allResev" Content="All" Width="80" VerticalAlignment="Center" Margin="170,0,0,0"  />
-            <Button x:Name="todayReserv" Content="Today" Width="80"/>
-            <Button x:Name="Refresh" Content="Refresh" Width="80" Cursor="Hand" />
+            
+            <Button x:Name="Refresh" Content="Refresh" Width="80" Cursor="Hand" Margin="330,0,0,0" Click="Refresh_Click" />
         </StackPanel>
         
         <StackPanel Grid.Row="1" Grid.Column="1">
@@ -56,7 +52,7 @@
                 <DataGrid.Columns>
                     <materialDesign:DataGridTextColumn Width="*" Header="Bill's ID" Binding="{Binding idbill}" IsReadOnly="True" />
                     <materialDesign:DataGridTextColumn Width="*" Header="Dishes" Binding="{Binding dishes}" />
-                    <materialDesign:DataGridTextColumn Width="*" Header="Bill" Binding="{Binding sumbill}" />                                        
+                    <materialDesign:DataGridTextColumn Width="*" Header="Price" Binding="{Binding sumbill}" />                                        
                 </DataGrid.Columns>
                 <DataGrid.ContextMenu>
                     <ContextMenu>

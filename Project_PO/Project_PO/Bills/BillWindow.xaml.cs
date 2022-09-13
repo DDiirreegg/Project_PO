@@ -22,7 +22,7 @@ namespace Project_PO
     {
         public BillWindow()
         {
-            InitializeComponent();
+            InitializeComponent();            
 
         }
 
@@ -44,14 +44,30 @@ namespace Project_PO
                 this.grdBills.ItemsSource = billInList;
 
             }
+        }        
+
+        private void BtM_Click(object sender, RoutedEventArgs e)
+        {
+            MainForm window1 = new MainForm();
+            window1.Show();
+            this.Close();
         }
 
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void DelReserv_Click(object sender, RoutedEventArgs e)
         {
-            using (ProjectContext db = new ProjectContext(ProjectConfig.CONNECTION_STRING))
-            {
-                this.cbBBill.ItemsSource = db.Bill.OrderBy(i => i.idbill).ToList();
-            }
+            Delete_Bill window2 = new Delete_Bill();
+            window2.Show();
+        }
+
+        private void Refresh_Click(object sender, RoutedEventArgs e)
+        {
+            showAllUsers();
+        }
+
+        private void AddReserv_Click(object sender, RoutedEventArgs e)
+        {
+            Add_Edit_Bill window3 = new Add_Edit_Bill();
+            window3.Show();
         }
     }
 }

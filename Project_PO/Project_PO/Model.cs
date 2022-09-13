@@ -64,8 +64,8 @@ namespace Project_PO
         [Key]
         public int idbill { get; set; }
         public string dishes { get; set; }
-        public int sumbill { get; set; }
-        
+        public int sumbill { get; set; }         
+                   
     }
     [Table("Menu")]
     public class Menu
